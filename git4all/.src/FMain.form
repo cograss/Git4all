@@ -12,8 +12,8 @@
       Text = ("Open Project")
       Shortcut = "Alt+O"
     }
-    { menuSpacer Menu
-      Text = ("________________")
+    { spacer Menu
+      #Translate = False
       Enabled = False
     }
     { menuProjectExit Menu
