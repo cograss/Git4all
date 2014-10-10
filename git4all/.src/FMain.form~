@@ -30,4 +30,8 @@
   { menuHelp Menu
     Text = ("Help")
   }
+  { Button1 Button
+    MoveScaled(13,12,15,5)
+    Text = ("Button1")
+  }
 }

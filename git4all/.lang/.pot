@@ -1,0 +1,47 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-11-01 04:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .project:1
+msgid "A GIT GUI focused on simplicity"
+msgstr ""
+
+#: FMain.form:17
+msgid "Project"
+msgstr ""
+
+#: FMain.form:20
+msgid "New Project"
+msgstr ""
+
+#: FMain.form:25
+msgid "Open Project"
+msgstr ""
+
+#: FMain.form:34
+msgid "Exit"
+msgstr ""
+
+#: FMain.form:40
+msgid "Settings"
+msgstr ""
+
+#: FMain.form:43
+msgid "New Account"
+msgstr ""
+
+#: FMain.form:48
+msgid "Help"
+msgstr ""
+
+#: webForm.form:22
+msgid "Loading page"
+msgstr ""

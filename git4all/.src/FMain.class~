@@ -9,8 +9,8 @@ Public Sub Form_Open()
 End
 
 
-Public Sub menuSettingsNewAccount_Click()
+Public Sub Button1_Click()
 
+'  webForm.WebView1.Url = "http://www.github.com"
   webForm.Show
-
 End

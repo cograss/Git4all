@@ -1,0 +1,20 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  WebView1.Url = "http://www.github.com"
+
+End
+
+
+Public Sub Form_Resize()
+Dim myX As Integer
+Dim myY As Integer
+  myX = webForm.W - 50
+  myY = webForm.H - 100
+  WebView1.Resize(myX, myY)
+End
+
+
+

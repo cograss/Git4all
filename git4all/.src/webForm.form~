@@ -1,0 +1,17 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,92,76)
+  { WebView1 WebView
+    MoveScaled(2,2,87,71)
+    #Translate = False
+    Expand = True
+  }
+  { ProgressBar1 ProgressBar
+    MoveScaled(17,74,72,1)
+  }
+  { Label1 Label
+    MoveScaled(5,74,12,2)
+    Text = ("Loading page")
+  }
+}
