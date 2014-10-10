@@ -1,0 +1,9 @@
+# Gambas Project File 3.0
+Title=A GIT GUI focused on simplicity
+Startup=FMain
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Translate=1
+Language=el_GR.UTF-8
+

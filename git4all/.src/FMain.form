@@ -1,0 +1,30 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,50,50)
+  { menuProject Menu
+    Text = ("Project")
+    { menuProjectNew Menu
+      Text = ("New Project")
+      Shortcut = "Alt+N"
+    }
+    { menuProjectOpen Menu
+      Text = ("Open Project")
+      Shortcut = "Alt+O"
+    }
+    { menuSpacer Menu
+      Text = ("________________")
+      Enabled = False
+    }
+    { menuProjectExit Menu
+      Text = ("Exit")
+      Shortcut = "Ctrl+X"
+    }
+  }
+  { menuSettings Menu
+    Text = ("Settings")
+  }
+  { menuHelp Menu
+    Text = ("Help")
+  }
+}
