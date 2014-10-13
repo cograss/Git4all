@@ -1,0 +1,51 @@
+' Gambas class file
+
+Static Public Sub webFormMessages(myLabel As String, myTitle As String)
+
+  webForm.Label1.Text = myLabel
+  webForm.Title = myTitle
+  
+End
+
+Static Public Sub openFile(openFilePath As String) As String
+  
+   Dim myFile As Stream
+   Dim myText As String
+   Dim myData As String
+      
+   If chkFileExist(openFilePath, True) Then
+      myFile = Open openFilePath For Input
+        While Not Eof(myFile)
+          Line Input #myFile, myText
+          myData &= myText & Chr(13)
+        Wend
+      Close #myFile
+      Return myData
+   Else
+      Message.Error("An Error occured while reading from file:\n" & openFilePath)
+   Endif
+ 
+End
+
+Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean
+
+'' This function needs two statements: 
+'' 'filePath' is the file, 
+'' 'createFile' creates the file when not exist OR empties the file if exist when set to true
+  Dim myStream As Stream
+  
+  If Not Exist(filePath) Then 
+  If createFile Then
+    If Message.Question("File " & filePath & " dont exist.\n Create File?", " OK ", " Cancel ") Then
+         myStream = Open filePath For Create
+         Close #myStream
+         Return True
+    Endif
+  Endif
+  Endif
+  Return True
+  
+End
+
+
+ 

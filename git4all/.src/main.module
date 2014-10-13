@@ -1,0 +1,22 @@
+' Gambas module file
+
+'
+'' Here we can declare global variables (viewed from all forms)
+''The keyword "Public" instead of "Dim" is used for declaration
+'' e.g: Public myGlobalVar As string 
+'
+  
+ Public glbGithubUrl As String  '' Github Webpage
+ Public glbConfigPath As String '' Configuration file path
+
+'' END of global variables declaration  
+
+Public Sub main()   
+
+''''''''''''' Global Variables assignment'''''''''''''''
+  main.glbGithubUrl = "http://www.github.com/" ' GitHUB main webpage
+  main.glbConfigPath = Trim(User.Home & "/git4all.cfg") ' Path of config file
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  FMain.Show 'call main form
+
+End
