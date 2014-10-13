@@ -1,8 +1,8 @@
 # Gambas Project File 3.0
 # Compiled with Gambas 3.5.3
 Title=A GIT GUI focused on simplicity
-Startup=FMain
-Version=0.0.1
+Startup=main
+Version=0.0.2
 Component=gb.image
 Component=gb.qt4
 Component=gb.form

@@ -15,6 +15,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: webForm.form:22
-msgid "Loading page"
+msgid "Label1"
 msgstr ""
 

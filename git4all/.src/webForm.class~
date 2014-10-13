@@ -2,19 +2,30 @@
 
 
 Public Sub Form_Open()
-
-  WebView1.Url = "http://www.github.com"
+  
+  Me.Maximized = True
+  Form_Resize()
 
 End
 
+ Public Sub Form_Resize()
 
-Public Sub Form_Resize()
-Dim myX As Integer
-Dim myY As Integer
-  myX = webForm.W - 50
-  myY = webForm.H - 100
-  WebView1.Resize(myX, myY)
+  
+  WebView1.Resize(webForm.W, webForm.H - 50)
+  WebView1.Move(0, 50) ' these 2 lines resize the webview component
+  
+  If webForm.Height < 480 Or WebView1.Width < 640 Then 
+    webForm.H = 480
+    webForm.W = 640
+  Endif 'Prevents window to be too small
+  
+ End
+
+Public Sub WebView1_Progress()
+
+  ProgressBar1.Value = WebView1.Progress
+  If WebView1.Progress = 1 Then webForm.Title = WebView1.Title
+
 End
-
 
 

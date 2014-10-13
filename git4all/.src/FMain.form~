@@ -23,15 +23,15 @@
   }
   { menuSettings Menu
     Text = ("Settings")
-    { menuSettingsNewAccount Menu
-      Text = ("New Account")
+    { menuSettingsGit Menu
+      #Translate = False
+      Text = "GitHUB"
+      { menuSettingsNewAccount Menu
+        Text = ("New Account")
+      }
     }
   }
   { menuHelp Menu
     Text = ("Help")
-  }
-  { Button1 Button
-    MoveScaled(13,12,15,5)
-    Text = ("Button1")
   }
 }
