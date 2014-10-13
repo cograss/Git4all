@@ -1,9 +1,0 @@
-' Gambas class file
-
-
-Public Sub Form_Open()
-Dim gitWebPage As String
-
-gitWebPage = "http://www.github.com"
-WebTextArea.Text = WebPage.Main(gitWebPage)
-End
