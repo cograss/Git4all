@@ -2,13 +2,13 @@
 
 { Form Form
   MoveScaled(0,0,50,50)
-  { menuProject Menu
+  { mnuProject Menu
     Text = ("Project")
-    { menuProjectNew Menu
+    { mnuProjectNew Menu
       Text = ("New Project")
       Shortcut = "Alt+N"
     }
-    { menuProjectOpen Menu
+    { mnuProjectOpen Menu
       Text = ("Open Project")
       Shortcut = "Alt+O"
     }
@@ -16,26 +16,31 @@
       #Translate = False
       Enabled = False
     }
-    { menuProjectExit Menu
+    { mnuProjectExit Menu
       Text = ("Exit")
       Shortcut = "Ctrl+X"
     }
   }
-  { menuSettings Menu
+  { mnuSettings Menu
     Text = ("Settings")
-    { menuSettingsGit Menu
+    { mnuSettingsGit Menu
       #Translate = False
       Text = "GitHUB"
-      { menuSettingsNewAccount Menu
+      { mnuSettingsGithubAccount Menu
+        Text = ("Account info")
+      }
+      { Spacer2 Menu
+      }
+      { mnuSettingsGitHubNewAccount Menu
         Text = ("New Account")
       }
     }
   }
-  { menuHelp Menu
+  { mnuHelp Menu
     Text = ("Help")
   }
   { Button1 Button
-    MoveScaled(18,11,12,9)
+    MoveScaled(19,14,12,9)
     Text = ("Button1")
   }
 }

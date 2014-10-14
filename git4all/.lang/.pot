@@ -14,43 +14,47 @@ msgstr ""
 msgid "A GIT GUI focused on simplicity"
 msgstr ""
 
-#: FMain.form:19
+#: FMain.form:21
 msgid "Project"
 msgstr ""
 
-#: FMain.form:22
+#: FMain.form:24
 msgid "New Project"
 msgstr ""
 
-#: FMain.form:27
+#: FMain.form:29
 msgid "Open Project"
 msgstr ""
 
-#: FMain.form:36
+#: FMain.form:38
 msgid "Exit"
 msgstr ""
 
-#: FMain.form:42
+#: FMain.form:44
 msgid "Settings"
 msgstr ""
 
-#: FMain.form:48
+#: FMain.form:50
+msgid "Account info"
+msgstr ""
+
+#: FMain.form:57
 msgid "New Account"
 msgstr ""
 
-#: FMain.form:54
+#: FMain.form:63
 msgid "Help"
 msgstr ""
 
-#: FMain.form:59
+#: FMain.form:68
 msgid "Button1"
 msgstr ""
 
-#: FMain.class:17
+#: FMain.class:27
 msgid "Download progress:"
 msgstr ""
 
-#: FMain.class:17
+#: FMain.class:27
 msgid "GitHUB registration page"
 msgstr ""
 
