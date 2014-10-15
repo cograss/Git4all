@@ -58,6 +58,46 @@ msgstr ""
 msgid "GitHUB registration page"
 msgstr ""
 
+#: frmGitHubAccount.form:17
+msgid "GitHUB account"
+msgstr ""
+
+#: frmGitHubAccount.form:34
+msgid "ComboBox1"
+msgstr ""
+
+#: frmGitHubAccount.form:39
+msgid "New Profile"
+msgstr ""
+
+#: frmGitHubAccount.form:44
+msgid "Username:"
+msgstr ""
+
+#: frmGitHubAccount.form:50
+msgid "Password:"
+msgstr ""
+
+#: frmGitHubAccount.form:56
+msgid "email:"
+msgstr ""
+
+#: frmGitHubAccount.form:62
+msgid "Save"
+msgstr ""
+
+#: frmGitHubAccount.form:67
+msgid "Cancel"
+msgstr ""
+
+#: frmGitHubAccount.class:12
+msgid "Profile Name"
+msgstr ""
+
+#: frmGitHubAccount.class:12
+msgid "Enter new profile name"
+msgstr ""
+
 #: webForm.form:22
 msgid "Label1"
 msgstr ""

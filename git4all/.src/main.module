@@ -21,6 +21,8 @@
  Public glbGithubUrl As String  '' Github Webpage.
  Public glbAppDir As String '' Main Directory of this application.
  Public glbConfigPath As String '' Configuration file full path.
+ Public glbProfile As String '' Current user profile used by app.
+ Public glbProfileFile As String '' The file that contains all profiles data
 
 '' END of global variables declaration.
 
@@ -31,6 +33,7 @@ Public Sub main()  ' Initial values and Show Main Form
   main.glbGithubUrl = "http://www.github.com/" ' GitHUB main webpage
   main.glbAppDir = Trim(User.Home &/ ".git4all/") ' Path of applications main directory
   main.glbConfigPath = main.glbAppDir &/ "git4all.cfg" ' Path of config file
+  main.glbProfileFile = main.glbAppDir &/ User.Name & ".profiles" ' The file that contains all profiles
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   

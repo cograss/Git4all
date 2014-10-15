@@ -40,8 +40,8 @@ End
 
 Public Sub mnuSettingsGithubAccount_Click()
   
-  If Not Exist(main.glbAppDir &/ User.Name & ".accounts") Then
-    myFunctions.fileCreator(main.glbAppDir &/ User.Name & ".accounts", False)
+  If Not Exist(main.glbProfileFile) Then
+    myFunctions.fileCreator(main.glbProfileFile, False)
   Endif  ''if file dont exist, create it
   frmGitHubAccount.Show()
 

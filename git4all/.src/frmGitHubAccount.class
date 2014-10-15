@@ -1,2 +1,24 @@
 ' Gambas class file
 
+Public Sub Form_Open()
+  
+  
+End
+
+
+Public Sub btnNew_Click()
+  Dim myProfile As String
+  
+  myProfile = InputBox(("Profile Name"), ("Enter new profile name"))
+  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return
+
+  ComboBox1.Add(myProfile, ComboBox1.Index + 1)
+
+End
+
+
+Public Sub btnCancel_Click()
+
+  Me.Close
+
+End
