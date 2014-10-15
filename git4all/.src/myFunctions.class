@@ -1,0 +1,80 @@
+' Gambas class file
+
+'' *** Functions for code optimization
+'' 
+
+Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets webForm Title and Label(s)
+'' FUNCTION INFO
+'' This function needs two arguments: 
+'' 'myTitle' is the webForm.Title setting 
+'' 'myLabel1' is the Label1.Text setting.
+'' 
+'' Add any new labels as arguments  
+'' e.g.: webFormMessages(myLabel[...] As String, myLabel2 As String, myLabel1, myTitle As String)
+'' 
+  webForm.Label1.Text = myLabel1
+  webForm.Title = myTitle
+  
+End
+
+Static Public Sub readFile(readFilePath As String) As String  '' Reads file and returns content as string
+  
+   Dim myFile As Stream
+   Dim myText As String
+   Dim myData As String
+      
+   If chkFileExist(readFilePath, True) Then
+      myFile = Open readFilePath For Input
+        While Not Eof(myFile)
+          Line Input #myFile, myText
+          myData &= myText & Chr(13)
+        Wend
+      Close #myFile
+      Return myData
+   Else
+      Message.Error("An Error occured while reading from file:\n" & readFilePath)
+   Endif
+ 
+End
+
+Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exits and returns boolean. 
+
+'' FUNCTION INFO
+'' This function needs two arguments: 
+'' 'filePath' is the file, 
+'' 'createFile' calls fileCreator(String, Boolean) when True
+'' 
+'' 
+  If Not Exist(filePath) Then 
+    If createFile Then
+     fileCreator(filePath, True)
+    Endif
+     Return False
+  Endif
+  Return True
+  
+End
+
+Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creates 'filePath' file 
+'' FUNCTION INFO
+'' This function needs two arguments: 
+'' 'filePath' is the file, 
+'' 'msgConfirm' asks permission and show result when True
+'' 
+
+  Dim myStream As Stream
+  
+  If msgConfirm Then
+     If Message.Question("File " & filePath & " dont exist.\n Create File?", " OK ", " Cancel ") = 2 Then Return
+  Endif ' if user presses "Cancel" exits function
+
+  myStream = Open filePath For Create
+  Close #myStream
+  
+  If msgConfirm Then Message.Info("File " & filePath & " created.") 
+
+End
+
+
+
+ 

@@ -1,0 +1,20 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,70,39)
+  { !WebView1 WebView
+    MoveScaled(2,7,25,11)
+    #Public = True
+    #Translate = False
+    Expand = True
+  }
+  { !ProgressBar1 ProgressBar
+    MoveScaled(2,3,24,2)
+    #Public = True
+  }
+  { !Label1 Label
+    MoveScaled(2,0,75,3)
+    #Public = True
+    Text = ("Label1")
+  }
+}

@@ -1,0 +1,46 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,50,50)
+  { mnuProject Menu
+    Text = ("Project")
+    { mnuProjectNew Menu
+      Text = ("New Project")
+      Shortcut = "Alt+N"
+    }
+    { mnuProjectOpen Menu
+      Text = ("Open Project")
+      Shortcut = "Alt+O"
+    }
+    { spacer Menu
+      #Translate = False
+      Enabled = False
+    }
+    { mnuProjectExit Menu
+      Text = ("Exit")
+      Shortcut = "Ctrl+X"
+    }
+  }
+  { mnuSettings Menu
+    Text = ("Settings")
+    { mnuSettingsGit Menu
+      #Translate = False
+      Text = "GitHUB"
+      { mnuSettingsGithubAccount Menu
+        Text = ("Account info")
+      }
+      { Spacer2 Menu
+      }
+      { mnuSettingsGitHubNewAccount Menu
+        Text = ("New Account")
+      }
+    }
+  }
+  { mnuHelp Menu
+    Text = ("Help")
+  }
+  { Button1 Button
+    MoveScaled(19,14,12,9)
+    Text = ("Button1")
+  }
+}

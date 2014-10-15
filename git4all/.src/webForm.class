@@ -1,0 +1,31 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+  
+  Me.Maximized = True
+  Form_Resize() 
+
+End
+
+ Public Sub Form_Resize() '' Adjust contents to window size
+
+  
+  WebView1.Resize(webForm.W, webForm.H - 50)
+  WebView1.Move(0, 50) ' these 2 lines resize the webview component
+  
+  If webForm.Height < 480 Or WebView1.Width < 640 Then 
+    webForm.H = 480
+    webForm.W = 640
+  Endif 'Prevents too small window
+  
+ End
+
+Public Sub WebView1_Progress() '' While download Progress < 1 this loops
+
+  ProgressBar1.Value = WebView1.Progress ' increases value of progressbar accordingly
+  If WebView1.Progress = 1 Then webForm.Title = WebView1.Title ' changes form title to new html title when finished
+
+End
+
+

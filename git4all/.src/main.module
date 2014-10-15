@@ -1,0 +1,40 @@
+' Gambas module file
+
+'' ************** APPLICATION STARTS FROM THIS MODULE ****************
+''                This module is used for:
+''
+''  Global Variable Declaration* :
+''    Here we can declare global variables (viewed from all forms and functions).
+''    The keyword "Public" instead of "Dim" is used for declaration. Please use "glb" infront of VarName for convenience. 
+''    e.g: "Public glbMyGlobalVar As Integer".
+''    
+'' * Please use one of the following if needed for your funtion.
+''    Usage: "Value = main.glbValue"  Value and glbValue must be of same Type.
+''    e.g.: 
+''          Dim myPath As String
+''          myPath = main.glbAppDir
+''  Initial Values:
+''     Should be Assigned in Public Sub main() below as they would be called from other functions.
+''       e.g.:  "main.glbAppDir = "
+''
+
+ Public glbGithubUrl As String  '' Github Webpage.
+ Public glbAppDir As String '' Main Directory of this application.
+ Public glbConfigPath As String '' Configuration file full path.
+
+'' END of global variables declaration.
+
+Public Sub main()  ' Initial values and Show Main Form
+
+''''''''''''' Global Variables Initialisation (only if needed)'''''''''''''''
+
+  main.glbGithubUrl = "http://www.github.com/" ' GitHUB main webpage
+  main.glbAppDir = Trim(User.Home &/ ".git4all/") ' Path of applications main directory
+  main.glbConfigPath = main.glbAppDir &/ "git4all.cfg" ' Path of config file
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  
+  If Not Exist(main.glbAppDir) Then Mkdir main.glbAppDir
+  FMain.Show 'call main form
+
+End
