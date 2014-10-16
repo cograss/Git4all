@@ -1,21 +1,20 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,64,26)
+  MoveScaled(0,0,64,25)
   Text = ("GitHUB account")
   Resizable = False
-  { TextBox1 TextBox
+  { txtBoxUser TextBox
     MoveScaled(12,4,21.4286,3.5714)
   }
-  { TextBox2 TextBox
+  { txtBoxPwd TextBox
     MoveScaled(12,10,21.4286,3.5714)
   }
-  { TextBox3 TextBox
+  { txtBoxEmail TextBox
     MoveScaled(12,16,21.4286,3.5714)
   }
-  { ComboBox1 ComboBox
+  { cmbProfile ComboBox
     MoveScaled(36,4,27,4)
-    Text = ("ComboBox1")
   }
   { btnNew Button
     MoveScaled(36,9,26,4)

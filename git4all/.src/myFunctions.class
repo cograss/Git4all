@@ -4,7 +4,7 @@
 '' 
 
 Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets webForm Title and Label(s)
-'' FUNCTION INFO
+'' ***FUNCTION INFO
 '' This function needs two arguments: 
 '' 'myTitle' is the webForm.Title setting 
 '' 'myLabel1' is the Label1.Text setting.
@@ -20,8 +20,7 @@ End
 Static Public Sub readFile(readFilePath As String) As String  '' Reads file and returns content as string
   
    Dim myFile As Stream
-   Dim myText As String
-   Dim myData As String
+   Dim myText, myData As String
       
    If chkFileExist(readFilePath, True) Then
       myFile = Open readFilePath For Input
@@ -37,13 +36,12 @@ Static Public Sub readFile(readFilePath As String) As String  '' Reads file and 
  
 End
 
-Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exits and returns boolean. 
+Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exists and returns boolean. 
 
-'' FUNCTION INFO
+'' ***FUNCTION INFO
 '' This function needs two arguments: 
-'' 'filePath' is the file, 
-'' 'createFile' calls fileCreator(String, Boolean) when True
-'' 
+'' *'filePath' is the file, 
+'' *'createFile' calls fileCreator(String, Boolean) when True
 '' 
   If Not Exist(filePath) Then 
     If createFile Then
@@ -56,7 +54,7 @@ Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boo
 End
 
 Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creates 'filePath' file 
-'' FUNCTION INFO
+'' ***FUNCTION INFO
 '' This function needs two arguments: 
 '' 'filePath' is the file, 
 '' 'msgConfirm' asks permission and show result when True
@@ -65,8 +63,8 @@ Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creat
   Dim myStream As Stream
   
   If msgConfirm Then
-     If Message.Question("File " & filePath & " dont exist.\n Create File?", " OK ", " Cancel ") = 2 Then Return
-  Endif ' if user presses "Cancel" exits function
+     If Message.Question(("The file ") & filePath & (" dont exist.\n Create File?"), (" OK "), (" Cancel ")) = 2 Then Return
+  Endif ' if user presses "Cancel" exits fileCreator()
 
   myStream = Open filePath For Create
   Close #myStream
@@ -75,6 +73,28 @@ Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creat
 
 End
 
+Static Public Sub comboLoader(loadToCombo As ComboBox, fromFile As String) '' Loads content to Combobox read from file
+'' ***FUNCTION INFO
+'' This function needs two arguments: 
+'' *'loadToCombo' name of the ComboBox, 
+'' * 'fromFile' the filepath of the file to be read from.
+'' 
+Dim hFile As File 'για το αρχείο 
+Dim sLine As String 'μια γραμμή απο το αρχειο
+Dim sItem As String 'το τελικό string που θα σταλεί στο combobox σωστά φορμαρισμένο (χωρίς περιγραφή)
+Dim sNum As Integer 'Αύξων αριθμός του Item στο combobox
 
+sNum = 0 'το αρχικό Index για το item που θα προστεθεί στο comboTo
+hFile = Open fromFile For Input
 
+While Not Eof(hFile)
+  Line Input #hFile, sLine 'παίρνει μια γραμμή απο το αρχείο και την βάζει στο sLine string
+  'sItem = Trim(Left$(sLine, InStr(sLine, " :"))) 'φοραρισμα και αποθήκευση στο sItem
+  sItem = sLine
+  sNum += 1
+  loadToCombo.Add(sItem, sNum) 'προσθήκη του Item με τον αυξων αριθμό του
+Wend
+Close #hFile
+
+End
  

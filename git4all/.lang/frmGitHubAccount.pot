@@ -18,39 +18,35 @@ msgstr ""
 msgid "GitHUB account"
 msgstr ""
 
-#: frmGitHubAccount.form:34
-msgid "ComboBox1"
-msgstr ""
-
-#: frmGitHubAccount.form:39
+#: frmGitHubAccount.form:38
 msgid "New Profile"
 msgstr ""
 
-#: frmGitHubAccount.form:44
+#: frmGitHubAccount.form:43
 msgid "Username:"
 msgstr ""
 
-#: frmGitHubAccount.form:50
+#: frmGitHubAccount.form:49
 msgid "Password:"
 msgstr ""
 
-#: frmGitHubAccount.form:56
+#: frmGitHubAccount.form:55
 msgid "email:"
 msgstr ""
 
-#: frmGitHubAccount.form:62
+#: frmGitHubAccount.form:61
 msgid "Save"
 msgstr ""
 
-#: frmGitHubAccount.form:67
+#: frmGitHubAccount.form:66
 msgid "Cancel"
 msgstr ""
 
-#: frmGitHubAccount.class:12
+#: frmGitHubAccount.class:19
 msgid "Profile Name"
 msgstr ""
 
-#: frmGitHubAccount.class:12
+#: frmGitHubAccount.class:19
 msgid "Enter new profile name"
 msgstr ""
 

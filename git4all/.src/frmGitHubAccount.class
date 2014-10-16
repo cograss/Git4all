@@ -1,8 +1,15 @@
 ' Gambas class file
 
 Public Sub Form_Open()
+  Dim test As String
   
-  
+  ''''''' load contents to cmbProfile ComboBox
+  If Not Exist(main.glbProfilesFile) Then 'if Profiles file dont exist.
+    myFunctions.comboLoader(cmbProfile, "init/gitProfile") 'add content from /init file.
+  Else
+    myFunctions.comboLoader(cmbProfile, main.glbProfilesFile) 'add content from Profiles file.
+  Endif ' End of loading contents
+
 End
 
 
@@ -12,7 +19,7 @@ Public Sub btnNew_Click()
   myProfile = InputBox(("Profile Name"), ("Enter new profile name"))
   If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return
 
-  ComboBox1.Add(myProfile, ComboBox1.Index + 1)
+  cmbProfile.Add(myProfile, cmbProfile.Index + 1)
 
 End
 

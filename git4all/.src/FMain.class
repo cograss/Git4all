@@ -30,19 +30,9 @@ Public Sub mnuSettingsGitHubNewAccount_Click() '' Calls webForm and shows GitHUB
 
 End
 
-Public Sub Button1_Click() ' Testing purposes. Only on development
-
-  Dim filePath As String
- 
- If myFunctions.chkFileExist(main.glbConfigPath, True) Then Message(Me.Name & ".Button1_Click() worked well")
- 
-End
 
 Public Sub mnuSettingsGithubAccount_Click()
   
-  If Not Exist(main.glbProfileFile) Then
-    myFunctions.fileCreator(main.glbProfileFile, False)
-  Endif  ''if file dont exist, create it
   frmGitHubAccount.Show()
 
 End
