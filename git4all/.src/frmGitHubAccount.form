@@ -1,14 +1,46 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,64,64)
-  { TextBox1 TextBox
-    MoveScaled(11,4,22,5)
+  MoveScaled(0,0,64,25)
+  Text = ("GitHUB account")
+  Resizable = False
+  { txtBoxUser TextBox
+    MoveScaled(12,4,21.4286,3.5714)
   }
-  { TextBox2 TextBox
-    MoveScaled(11,10,22,5)
+  { txtBoxPwd TextBox
+    MoveScaled(12,10,21.4286,3.5714)
   }
-  { TextBox3 TextBox
-    MoveScaled(11,16,22,5)
+  { txtBoxEmail TextBox
+    MoveScaled(12,16,21.4286,3.5714)
+  }
+  { cmbProfile ComboBox
+    MoveScaled(36,4,27,4)
+  }
+  { btnNew Button
+    MoveScaled(36,9,26,4)
+    Text = ("New Profile")
+  }
+  { Label1 Label
+    MoveScaled(1,4,11,3)
+    Text = ("Username:")
+    Alignment = Align.Right
+  }
+  { Label2 Label
+    MoveScaled(1,10,11,3)
+    Text = ("Password:")
+    Alignment = Align.Right
+  }
+  { Label3 Label
+    MoveScaled(1,16,11,3)
+    Text = ("email:")
+    Alignment = Align.Right
+  }
+  { btnSave Button
+    MoveScaled(36,16,13,4)
+    Text = ("Save")
+  }
+  { btnCancel Button
+    MoveScaled(50,16,13,4)
+    Text = ("Cancel")
   }
 }

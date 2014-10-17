@@ -14,40 +14,36 @@ msgstr ""
 msgid "A GIT GUI focused on simplicity"
 msgstr ""
 
-#: FMain.form:21
+#: FMain.form:20
 msgid "Project"
 msgstr ""
 
-#: FMain.form:24
+#: FMain.form:23
 msgid "New Project"
 msgstr ""
 
-#: FMain.form:29
+#: FMain.form:28
 msgid "Open Project"
 msgstr ""
 
-#: FMain.form:38
+#: FMain.form:37
 msgid "Exit"
 msgstr ""
 
-#: FMain.form:44
+#: FMain.form:43
 msgid "Settings"
 msgstr ""
 
-#: FMain.form:50
+#: FMain.form:49
 msgid "Account info"
 msgstr ""
 
-#: FMain.form:57
+#: FMain.form:56
 msgid "New Account"
 msgstr ""
 
-#: FMain.form:63
+#: FMain.form:62
 msgid "Help"
-msgstr ""
-
-#: FMain.form:68
-msgid "Button1"
 msgstr ""
 
 #: FMain.class:27
@@ -56,6 +52,60 @@ msgstr ""
 
 #: FMain.class:27
 msgid "GitHUB registration page"
+msgstr ""
+
+#: frmGitHubAccount.form:17
+msgid "GitHUB account"
+msgstr ""
+
+#: frmGitHubAccount.form:38
+msgid "New Profile"
+msgstr ""
+
+#: frmGitHubAccount.form:43
+msgid "Username:"
+msgstr ""
+
+#: frmGitHubAccount.form:49
+msgid "Password:"
+msgstr ""
+
+#: frmGitHubAccount.form:55
+msgid "email:"
+msgstr ""
+
+#: frmGitHubAccount.form:61
+msgid "Save"
+msgstr ""
+
+#: frmGitHubAccount.form:66
+msgid "Cancel"
+msgstr ""
+
+#: frmGitHubAccount.class:21
+msgid "Profile Name"
+msgstr ""
+
+#: frmGitHubAccount.class:21
+msgid "Enter new profile name"
+msgstr ""
+
+#: myFunctions.class:70
+msgid "The file "
+msgstr ""
+
+#: myFunctions.class:70
+msgid ""
+" dont exist.\n"
+" Create File?"
+msgstr ""
+
+#: myFunctions.class:70
+msgid " OK "
+msgstr ""
+
+#: myFunctions.class:70
+msgid " Cancel "
 msgstr ""
 
 #: webForm.form:22

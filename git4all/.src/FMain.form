@@ -39,8 +39,4 @@
   { mnuHelp Menu
     Text = ("Help")
   }
-  { Button1 Button
-    MoveScaled(19,14,12,9)
-    Text = ("Button1")
-  }
 }

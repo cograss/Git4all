@@ -14,40 +14,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FMain.form:21
+#: FMain.form:20
 msgid "Project"
 msgstr ""
 
-#: FMain.form:24
+#: FMain.form:23
 msgid "New Project"
 msgstr ""
 
-#: FMain.form:29
+#: FMain.form:28
 msgid "Open Project"
 msgstr ""
 
-#: FMain.form:38
+#: FMain.form:37
 msgid "Exit"
 msgstr ""
 
-#: FMain.form:44
+#: FMain.form:43
 msgid "Settings"
 msgstr ""
 
-#: FMain.form:50
+#: FMain.form:49
 msgid "Account info"
 msgstr ""
 
-#: FMain.form:57
+#: FMain.form:56
 msgid "New Account"
 msgstr ""
 
-#: FMain.form:63
+#: FMain.form:62
 msgid "Help"
-msgstr ""
-
-#: FMain.form:68
-msgid "Button1"
 msgstr ""
 
 #: FMain.class:27

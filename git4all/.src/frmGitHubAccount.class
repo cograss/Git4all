@@ -1,2 +1,47 @@
 ' Gambas class file
 
+Public Sub Form_Open()
+
+  '''''''''' load contents to cmbProfile ComboBox
+  If Not Exist(main.glbProfilesFile) Then 'if Profiles file dont exist.
+    myFunctions.comboLoader(cmbProfile, "init/gitProfile") 'add content from /init file.
+  Else
+    myFunctions.comboLoader(cmbProfile, main.glbProfilesFile) 'add content from Profiles file.
+  Endif
+  '''''''''' end of loading contents
+  Wait
+  Me.Center
+  loadUserData()
+End
+
+
+Public Sub btnNew_Click() 'click the New Account button.
+  Dim myProfile As String
+  
+  myProfile = InputBox(("Profile Name"), ("Enter new profile name"))
+  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return
+  cmbProfile.Add(myProfile, cmbProfile.Index + 1)
+
+End
+
+Public Sub loadUserData()
+Dim strFile As String
+
+strFile = main.glbAppDir & cmbProfile.Text
+
+If Not Exist(strFile) Then strFile = "init/gitAccount"
+
+myFunctions.textBoxLoader(txtBoxUser, strFile, 1)
+Wait
+myFunctions.textBoxLoader(txtBoxPwd, strFile, 2)
+Wait
+myFunctions.textBoxLoader(txtBoxEmail, strFile, 3)
+
+End
+
+
+Public Sub btnCancel_Click()
+
+  Me.Close
+
+End

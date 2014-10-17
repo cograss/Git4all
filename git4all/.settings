@@ -8,9 +8,15 @@ Count=0
 Count=0
 
 [OpenFile]
-Active=1
-File[1]=".src/frmGitHubAccounts.form"
-Count=1
+File[1]=".src/main.module:43.2"
+Active=2
+File[2]=".src/frmGitHubAccount.class:13.11"
+Fold[2]=[17]
+File[3]=".src/myFunctions.class:116.25"
+File[4]="init/gitProfile:0.10"
+File[5]=".src/FMain.class:35.3"
+File[6]="init/gitAccount:2.5"
+Count=6
 
 [Watches]
 Count=0
