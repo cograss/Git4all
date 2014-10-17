@@ -43,3 +43,15 @@ Public Sub btnCancel_Click()
 
 End
 
+Public Sub textBoxSaver(TextBoxName As TextBox, filepath As String)
+
+Dim hFile As Stream
+Dim sLine As String
+sLine = TextBoxName.Text
+
+    If sLine Not Null Then 
+      hFile = Open filepath For Output 'opens file   
+      Print #hFile, sLine & Chr(13) 
+      Close #hFile
+    Endif
+End
