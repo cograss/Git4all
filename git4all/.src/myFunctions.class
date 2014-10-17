@@ -1,13 +1,13 @@
 ' Gambas class file
 
-'' *** Functions for code optimization
-'' 
+'' ## Functions for code optimization
+''  # Please read function info in eatch function
 
 Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets webForm Title and Label(s)
-'' ***FUNCTION INFO
+'' ###FUNCTION INFO
 '' This function needs two arguments: 
-'' 'myTitle' is the webForm.Title setting 
-'' 'myLabel1' is the Label1.Text setting.
+'' *'myTitle' is the webForm.Title setting 
+'' *'myLabel1' is the Label1.Text setting.
 '' 
 '' Add any new labels as arguments  
 '' e.g.: webFormMessages(myLabel[...] As String, myLabel2 As String, myLabel1, myTitle As String)
@@ -17,28 +17,32 @@ Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets 
   
 End
 
-Static Public Sub readFile(readFilePath As String) As String  '' Reads file and returns content as string
-  
-   Dim myFile As Stream
-   Dim myText, myData As String
-      
-   If chkFileExist(readFilePath, True) Then
-      myFile = Open readFilePath For Input
-        While Not Eof(myFile)
-          Line Input #myFile, myText
-          myData &= myText & Chr(13)
-        Wend
-      Close #myFile
-      Return myData
-   Else
-      Message.Error("An Error occured while reading from file:\n" & readFilePath)
-   Endif
- 
-End
+' Static Public Sub readFile(readFilePath As String) As String  '' Reads file and returns content as string
+'   '' ###FUNCTION INFO
+' '' This function needs one (1) argument: 
+' '' *'readFilePath' is the filepath of the file to be read.
+' '' * RETURNS: File data as string.
+' '' 
+'    Dim myFile As Stream
+'    Dim myText, myData As String
+'       
+'    If chkFileExist(readFilePath, True) Then
+'       myFile = Open readFilePath For Input
+'         While Not Eof(myFile)
+'           Line Input #myFile, myText
+'           myData &= myText & Chr(13)
+'         Wend
+'       Close #myFile
+'       Return myData
+'    Else
+'       Message.Error("An Error occured while reading from file:\n" & readFilePath)
+'    Endif
+'  
+' End
 
 Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exists and returns boolean. 
 
-'' ***FUNCTION INFO
+'' ###FUNCTION INFO
 '' This function needs two arguments: 
 '' *'filePath' is the file, 
 '' *'createFile' calls fileCreator(String, Boolean) when True
@@ -53,46 +57,64 @@ Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boo
   
 End
 
-Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creates 'filePath' file 
-'' ***FUNCTION INFO
+Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creates 'filePath' file.
+'' ###FUNCTION INFO
 '' This function needs two arguments: 
-'' 'filePath' is the file, 
-'' 'msgConfirm' asks permission and show result when True
+'' *'filePath' is the file, 
+'' *'msgConfirm' asks permission and show result when True, when False creates file silently.
 '' 
 
   Dim myStream As Stream
   
-  If msgConfirm Then
+  If msgConfirm Then 'if msgCorfirm argument is true
      If Message.Question(("The file ") & filePath & (" dont exist.\n Create File?"), (" OK "), (" Cancel ")) = 2 Then Return
   Endif ' if user presses "Cancel" exits fileCreator()
 
-  myStream = Open filePath For Create
-  Close #myStream
+  myStream = Open filePath For Create 'Create file
+  Close #myStream 
   
   If msgConfirm Then Message.Info("File " & filePath & " created.") 
 
 End
 
-Static Public Sub comboLoader(loadToCombo As ComboBox, fromFile As String) '' Loads content to Combobox read from file
-'' ***FUNCTION INFO
+Static Public Sub comboLoader(loadToCombo As ComboBox, fromFile As String) '' Loads content from file to Combobox.
+'' ###FUNCTION INFO
 '' This function needs two arguments: 
 '' *'loadToCombo' name of the ComboBox, 
-'' * 'fromFile' the filepath of the file to be read from.
+'' *'fromFile' the filepath of the file to be read from.
 '' 
-Dim hFile As File 'για το αρχείο 
-Dim sLine As String 'μια γραμμή απο το αρχειο
-Dim sItem As String 'το τελικό string που θα σταλεί στο combobox σωστά φορμαρισμένο (χωρίς περιγραφή)
-Dim sNum As Integer 'Αύξων αριθμός του Item στο combobox
+Dim hFile As File
+Dim sLine As String 'the ComboBox text
+Dim sNum As Integer 'the Combobox Index
 
-sNum = 0 'το αρχικό Index για το item που θα προστεθεί στο comboTo
+sNum = 0
 hFile = Open fromFile For Input
-
 While Not Eof(hFile)
-  Line Input #hFile, sLine 'παίρνει μια γραμμή απο το αρχείο και την βάζει στο sLine string
-  'sItem = Trim(Left$(sLine, InStr(sLine, " :"))) 'φοραρισμα και αποθήκευση στο sItem
-  sItem = sLine
-  sNum += 1
-  loadToCombo.Add(sItem, sNum) 'προσθήκη του Item με τον αυξων αριθμό του
+  Line Input #hFile, sLine 
+  loadToCombo.Add(sLine, sNum + 1) 
+Wend
+Close #hFile
+
+End
+
+Static Public Sub textBoxLoader(loadToTextBox As TextBox, fromFile As String, lineNum As Integer) '' Loads content from file to TextBox
+'' ###FUNCTION INFO
+'' This function needs three (3) arguments: 
+'' *'loadToTextBox' name of the TextBox, 
+'' *'fromFile' the filepath of the file to be read from.
+'' *'lineNum' the line number to add to TextBox.
+'' 
+Dim hFile As Stream
+Dim sLine As String
+
+hFile = Open fromFile For Input 'opens file
+While Not Eof(hFile)
+  While lineNum > 0 'go to line number
+    Line Input #hFile, sLine 
+    lineNum -= 1
+    If sLine Not Null Then loadToTextBox.Text = sLine
+  Wend
+Line Input #hFile, sLine 
 Wend
 Close #hFile
 

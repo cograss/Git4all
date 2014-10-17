@@ -42,11 +42,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: frmGitHubAccount.class:19
+#: frmGitHubAccount.class:21
 msgid "Profile Name"
 msgstr ""
 
-#: frmGitHubAccount.class:19
+#: frmGitHubAccount.class:21
 msgid "Enter new profile name"
 msgstr ""
 
