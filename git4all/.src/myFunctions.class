@@ -17,24 +17,22 @@ Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets 
   
 End
 
-Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exists and returns boolean. 
-
+Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exists and returns True or False. 
 '' ###FUNCTION INFO
 '' This function needs two arguments: 
 '' *'filePath' is the file, 
 '' *'createFile' calls fileCreator(String, Boolean) when True
 '' 
   If Not Exist(filePath) Then 
-    If createFile Then
-     fileCreator(filePath, True)
+    If createFile Then ' if createFile argument is set to True
+      fileCreator(filePath, True) 'create file, ask confirmation = True
     Endif
-     Return False
+    Return False
   Endif
-  Return True
-  
+  Return True 
 End
 
-Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creates 'filePath' file.
+Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creates 'filePath' file. Ask confirm when msgConfirm = True
 '' ###FUNCTION INFO
 '' This function needs two arguments: 
 '' *'filePath' is the file, 
@@ -45,12 +43,12 @@ Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creat
   
   If msgConfirm Then 'if msgCorfirm argument is true
      If Message.Question(("The file ") & filePath & (" dont exist.\n Create File?"), (" OK "), (" Cancel ")) = 2 Then Return
-  Endif ' if user presses "Cancel" exits fileCreator()
+  Endif ' if user presses "Cancel" exits fileCreator() *parenthesis at string adds string to translation
 
   myStream = Open filePath For Create 'Create file
   Close #myStream 
   
-  If msgConfirm Then Message.Info("File " & filePath & " created.") 
+  If msgConfirm Then Message.Info(("File ") & filePath & (" created.")) 
 
 End
 
@@ -65,11 +63,12 @@ Dim sLine As String 'the ComboBox text
 Dim sNum As Integer 'the Combobox Index
 
 sNum = loadToCombo.Count
+
 hFile = Open fromFile For Input
-While Not Eof(hFile)
-  Line Input #hFile, sLine 
-  loadToCombo.Add(sLine, sNum + 1) 
-Wend
+  While Not Eof(hFile)
+    Line Input #hFile, sLine 
+    loadToCombo.Add(sLine, sNum + 1) 
+  Wend
 Close #hFile
 
 End
@@ -85,27 +84,28 @@ Dim hFile As Stream
 Dim sLine As String
 
 hFile = Open fromFile For Input 'opens file
-While Not Eof(hFile)
-  While lineNum > 0 'go to line number
+  While Not Eof(hFile)
+    While lineNum > 0 'go to line number
+      Line Input #hFile, sLine 
+      lineNum -= 1 'lineNum = lineNum - 1
+      If sLine Not Null Then loadToTextBox.Text = sLine
+    Wend
     Line Input #hFile, sLine 
-    lineNum -= 1
-    If sLine Not Null Then loadToTextBox.Text = sLine
   Wend
-Line Input #hFile, sLine 
-Wend
 Close #hFile
 
 End
 
 Static Public Sub textBoxSaver(TextBoxName As TextBox, filepath As String) '' saves Textbox.Text to a file
 
-Dim hFile As Stream
+Dim hFile As File
 Dim sLine As String
-sLine = TextBoxName.Text & Chr(13) 
+Dim iLines As Integer 'the number of lines exist in file
 
+sLine = TextBoxName.Text & Chr(13) 
   If sLine Not Null Then 
-    hFile = Open filepath For Output 'opens file   
-    Print #hFile, sLine
+    hFile = Open filepath For Append 'opens file setting pointer at Eof (for additional data)
+    Print #hFile, sLine 'add data
     Close #hFile
   Endif
 End

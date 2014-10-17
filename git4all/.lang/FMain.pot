@@ -46,11 +46,11 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: FMain.class:27
+#: FMain.class:30
 msgid "Download progress:"
 msgstr ""
 
-#: FMain.class:27
+#: FMain.class:30
 msgid "GitHUB registration page"
 msgstr ""
 

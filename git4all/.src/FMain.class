@@ -5,6 +5,9 @@ Public Sub _new()
 End
 
 Public Sub Form_Open()
+
+  Me.Height = 600
+  Me.width = 800
   Me.Center
 End
 

@@ -26,7 +26,7 @@
 
 '' END of global variables declaration.
 
-Public Sub main()  ' Initial values and Show Main Form
+Public Sub main()  '' Global declarations, initial values and Show Main Form
 
 ''''''''''''' Global Variables Initials (only if needed)'''''''''''''''''''''
 

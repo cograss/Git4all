@@ -14,19 +14,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: myFunctions.class:47
+#: myFunctions.class:45
 msgid "The file "
 msgstr ""
 
-#: myFunctions.class:47
+#: myFunctions.class:45
 msgid " dont exist.\n Create File?"
 msgstr ""
 
-#: myFunctions.class:47
+#: myFunctions.class:45
 msgid " OK "
 msgstr ""
 
-#: myFunctions.class:47
+#: myFunctions.class:45
 msgid " Cancel "
+msgstr ""
+
+#: myFunctions.class:51
+msgid "File "
+msgstr ""
+
+#: myFunctions.class:51
+msgid " created."
 msgstr ""
 
