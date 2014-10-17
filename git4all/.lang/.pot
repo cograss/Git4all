@@ -90,21 +90,25 @@ msgstr ""
 msgid "Enter new profile name"
 msgstr ""
 
-#: myFunctions.class:70
+#: frmGitHubAccount.class:56
+msgid "Profile saved."
+msgstr ""
+
+#: myFunctions.class:47
 msgid "The file "
 msgstr ""
 
-#: myFunctions.class:70
+#: myFunctions.class:47
 msgid ""
 " dont exist.\n"
 " Create File?"
 msgstr ""
 
-#: myFunctions.class:70
+#: myFunctions.class:47
 msgid " OK "
 msgstr ""
 
-#: myFunctions.class:70
+#: myFunctions.class:47
 msgid " Cancel "
 msgstr ""
 

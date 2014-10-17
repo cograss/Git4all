@@ -33,12 +33,12 @@ Public Sub main()  ' Initial values and Show Main Form
   main.glbGithubUrl = "http://www.github.com/" ' GitHUB main webpage
   main.glbAppDir = Trim(User.Home &/ ".git4all/") ' Path of application data main directory
   main.glbConfigPath = main.glbAppDir &/ "git4all.cfg" ' Path of config file
-  main.glbProfilesFile = main.glbAppDir &/ User.Name & ".profiles" ' The file that contains all profiles
+  main.glbProfilesFile = main.glbAppDir &/ "profiles" ' The file that contains all profiles
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   
   If Not Exist(main.glbAppDir) Then Mkdir main.glbAppDir
-  
+
   FMain.Show 'call main form
 
 End

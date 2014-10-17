@@ -17,29 +17,6 @@ Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets 
   
 End
 
-' Static Public Sub readFile(readFilePath As String) As String  '' Reads file and returns content as string
-'   '' ###FUNCTION INFO
-' '' This function needs one (1) argument: 
-' '' *'readFilePath' is the filepath of the file to be read.
-' '' * RETURNS: File data as string.
-' '' 
-'    Dim myFile As Stream
-'    Dim myText, myData As String
-'       
-'    If chkFileExist(readFilePath, True) Then
-'       myFile = Open readFilePath For Input
-'         While Not Eof(myFile)
-'           Line Input #myFile, myText
-'           myData &= myText & Chr(13)
-'         Wend
-'       Close #myFile
-'       Return myData
-'    Else
-'       Message.Error("An Error occured while reading from file:\n" & readFilePath)
-'    Endif
-'  
-' End
-
 Static Public Sub chkFileExist(filePath As String, createFile As Boolean) As Boolean ''Cheks if file exists and returns boolean. 
 
 '' ###FUNCTION INFO
@@ -118,5 +95,18 @@ Line Input #hFile, sLine
 Wend
 Close #hFile
 
+End
+
+Static Public Sub textBoxSaver(TextBoxName As TextBox, filepath As String) '' saves Textbox.Text to a file
+
+Dim hFile As Stream
+Dim sLine As String
+sLine = TextBoxName.Text & Chr(13) 
+
+  If sLine Not Null Then 
+    hFile = Open filepath For Output 'opens file   
+    Print #hFile, sLine
+    Close #hFile
+  Endif
 End
  

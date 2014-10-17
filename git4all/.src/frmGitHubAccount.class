@@ -21,10 +21,11 @@ Public Sub btnNew_Click() 'click the New Account button.
   myProfile = InputBox(("Profile Name"), ("Enter new profile name")) 'gets profile name from user
   If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return 'exits the function
   cmbProfile.Add(myProfile, cmbProfile.Index + 1) 'adds profilename to ComboBox
+  cmbProfile.Index += 1 
 
 End
 
-Public Sub loadUserData() 'get data from lines 1-3 in file and
+Public Sub loadUserData() 'get data from lines 1-3 in file and load to textboxes.
 Dim strFile As String
 
 strFile = main.glbAppDir & cmbProfile.Text 'the data file now is .git4all/Profilename
@@ -36,22 +37,22 @@ myFunctions.textBoxLoader(txtBoxEmail, strFile, 3)
 
 End
 
-
 Public Sub btnCancel_Click()
 
   Me.Close
 
 End
 
-Public Sub textBoxSaver(TextBoxName As TextBox, filepath As String)
+Public Sub btnSave_Click() '' activated when Save button is pressed
+Dim myText, myPath As String
+Dim myTextBox As New TextBox(Me) 'used to get text from other controls.
 
-Dim hFile As Stream
-Dim sLine As String
-sLine = TextBoxName.Text
+myText = cmbProfile.Current.Text ' a trick to use ComboBox.Text 
+myTextBox.Text = myText          ' as TextBox.Text 
 
-    If sLine Not Null Then 
-      hFile = Open filepath For Output 'opens file   
-      Print #hFile, sLine & Chr(13) 
-      Close #hFile
-    Endif
+mypath = main.glbProfilesFile
+If Not Exist(mypath) Then myFunctions.fileCreator(mypath, True)
+myFunctions.textBoxSaver(myTextBox, mypath)
+Message.Info(("Profile saved."))
+Me.Close
 End

@@ -23,9 +23,8 @@ End
 
 Public Sub mnuSettingsGitHubNewAccount_Click() '' Calls webForm and shows GitHUB registration page (currently main).
 
-   webForm.WebView1.Url = main.glbGithubUrl
+  webForm.WebView1.Url = main.glbGithubUrl
   myFunctions.webFormMessages(("Download progress:"), ("GitHUB registration page"))
-
   webForm.Show
 
 End

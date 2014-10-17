@@ -50,3 +50,7 @@ msgstr ""
 msgid "Enter new profile name"
 msgstr ""
 
+#: frmGitHubAccount.class:56
+msgid "Profile saved."
+msgstr ""
+
