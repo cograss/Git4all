@@ -11,30 +11,27 @@ Public Sub Form_Open()
   '''''''''' end of loading contents
   Wait
   Me.Center
-  loadUserData()
+  loadUserData() 'calls loadUsedData function
 End
 
 
 Public Sub btnNew_Click() 'click the New Account button.
   Dim myProfile As String
   
-  myProfile = InputBox(("Profile Name"), ("Enter new profile name"))
-  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return
-  cmbProfile.Add(myProfile, cmbProfile.Index + 1)
+  myProfile = InputBox(("Profile Name"), ("Enter new profile name")) 'gets profile name from user
+  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return 'exits the function
+  cmbProfile.Add(myProfile, cmbProfile.Index + 1) 'adds profilename to ComboBox
 
 End
 
-Public Sub loadUserData()
+Public Sub loadUserData() 'get data from lines 1-3 in file and
 Dim strFile As String
 
-strFile = main.glbAppDir & cmbProfile.Text
+strFile = main.glbAppDir & cmbProfile.Text 'the data file now is .git4all/Profilename
 
-If Not Exist(strFile) Then strFile = "init/gitAccount"
-
+If Not Exist(strFile) Then strFile = "init/gitAccount" 'get data from provided init/ folder
 myFunctions.textBoxLoader(txtBoxUser, strFile, 1)
-Wait
 myFunctions.textBoxLoader(txtBoxPwd, strFile, 2)
-Wait
 myFunctions.textBoxLoader(txtBoxEmail, strFile, 3)
 
 End
@@ -45,3 +42,4 @@ Public Sub btnCancel_Click()
   Me.Close
 
 End
+

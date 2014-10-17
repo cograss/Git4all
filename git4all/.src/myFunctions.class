@@ -87,7 +87,7 @@ Dim hFile As File
 Dim sLine As String 'the ComboBox text
 Dim sNum As Integer 'the Combobox Index
 
-sNum = 0
+sNum = loadToCombo.Count
 hFile = Open fromFile For Input
 While Not Eof(hFile)
   Line Input #hFile, sLine 
