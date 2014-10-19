@@ -16,16 +16,16 @@ End
 
 
 Public Sub btnNew_Click() 'click the New Account button.
-  Dim myProfile As String
-  
-  myProfile = InputBox(("Profile Name"), ("Enter new profile name")) 'gets profile name from user
-  
-  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return 'exits the function. 
+Dim myProfile As String
+
+myProfile = InputBox(("Profile Name"), ("Enter new profile name")) 'gets profile name from user
+  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return 'exits the function.
+
   ''
   ''   TODO: make a search function to prevent double entries in ProfilesFile.
   ''
-  cmbProfile.Add(myProfile, cmbProfile.Index + 1) 'adds profilename to ComboBox
-  cmbProfile.Index += 1 
+  cmbProfile.Add(myProfile, cmbProfile.Index + 1) 'adds profilename to ComboBox.
+  cmbProfile.Index += 1 'changes to new added item.
 
 End
 

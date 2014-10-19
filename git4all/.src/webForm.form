@@ -9,7 +9,7 @@
     Expand = True
   }
   { !ProgressBar1 ProgressBar
-    MoveScaled(2,3,24,2)
+    MoveScaled(2,3,24,3)
     #Public = True
   }
   { !Label1 Label

@@ -1,7 +1,7 @@
 ' Gambas class file
 
 '' ## Functions for code optimization
-''  # Please read function info in eatch function
+''  # Please read function info in each function
 
 Static Public Sub webFormMessages(myLabel1 As String, myTitle As String) ''Sets webForm Title and Label(s)
 '' ###FUNCTION INFO
@@ -38,9 +38,9 @@ Static Public Sub fileCreator(filePath As String, msgConfirm As Boolean) ''Creat
 '' *'filePath' is the file, 
 '' *'msgConfirm' asks permission and show result when True, when False creates file silently.
 '' 
-
   Dim myStream As Stream
-  
+
+filePath = Replace(filePath, " ", "_") 'replace space with underscore. (to avoid shell errors easy)
   If msgConfirm Then 'if msgCorfirm argument is true
      If Message.Question(("The file ") & filePath & (" dont exist.\n Create File?"), (" OK "), (" Cancel ")) = 2 Then Return
   Endif ' if user presses "Cancel" exits fileCreator() *parenthesis at string adds string to translation
@@ -63,7 +63,7 @@ Dim sLine As String 'the ComboBox text
 Dim sNum As Integer 'the Combobox Index
 
 sNum = loadToCombo.Count
-
+fromFile = Replace(fromFile, " ", "_") 'replace space with underscore. (to avoid shell errors easy)
 hFile = Open fromFile For Input
   While Not Eof(hFile)
     Line Input #hFile, sLine 
@@ -96,12 +96,12 @@ Close #hFile
 
 End
 
-Static Public Sub textBoxSaver(TextBoxName As TextBox, filepath As String) '' saves Textbox.Text to a file
+Static Public Sub textBoxSaver(TextBoxName As TextBox, filePath As String) '' saves Textbox.Text to a file
 
 Dim hFile As File
 Dim sLine As String
-Dim iLines As Integer 'the number of lines exist in file
 
+filePath = Replace(filePath, " ", "_") 'replace space with underscore. (to avoid shell errors easy)
 sLine = TextBoxName.Text & Chr(13) 
   If sLine Not Null Then 
     hFile = Open filepath For Append 'opens file setting pointer at Eof (for additional data)

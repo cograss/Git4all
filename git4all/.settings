@@ -11,12 +11,10 @@ Count=0
 [OpenFile]
 File[1]=".src/frmGitHubAccount.form"
 Active=2
-File[2]=".src/frmGitHubAccount.class:57.3"
-File[3]=".src/myFunctions.class:100.0"
-File[4]=".src/FMain.class:34.0"
-Fold[4]=[2,6,10,17]
-File[5]=".src/main.module:40.0"
-Count=5
+File[2]=".src/frmGitHubAccount.class:51.0"
+Fold[2]=[42]
+File[3]=".src/myFunctions.class:106.2"
+Count=3
 
 [Watches]
 Count=0
