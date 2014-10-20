@@ -9,6 +9,7 @@
   }
   { txtBoxPwd TextBox
     MoveScaled(12,10,21.4286,3.5714)
+    Password = True
   }
   { txtBoxEmail TextBox
     MoveScaled(12,16,21.4286,3.5714)

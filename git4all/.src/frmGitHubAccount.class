@@ -17,21 +17,16 @@ End
 
 Public Sub btnNew_Click() 'click the New Account button.
 Dim myProfile, mySearch As String
-Dim i As Integer
 
 myProfile = InputBox(("Profile Name"), ("Enter new profile name")) 'gets profile name from user
 myProfile = Trim(myProfile)
 
- i = cmbProfile.Count ''this while loop is a small search engine. Seaches all combo entries
- While i > 0
-    mySearch = cmbProfile.Text
+ For Each mySearch In cmbProfile.List 'for each item in array
     If Comp(mySearch, myProfile) = 0 Or myProfile = "" Then Return 'this prevents double or null entries. 
-    i -= i 'decrements i
- Wend
-
-  cmbProfile.Add(myProfile, cmbProfile.Index + 1) 'adds profilename to ComboBox.
-  cmbProfile.Index += 1 'changes to new added item.
-
+ Next ''this while loop is a small search engine. Seaches all combo entries and compares the .Text value with myProfile
+ 
+  cmbProfile.Add(myProfile, cmbProfile.Count + 1) 'adds profilename to ComboBox.
+  cmbProfile.Index = cmbProfile.Count - 1 'changes to new added item. (index starts from 0 count starts from 1)
 End
 
 Public Sub loadUserData() 'get data from lines 1-3 in file and load to textboxes.

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2014-10-20 12:24 UTC\n"
+"POT-Creation-Date: 2014-10-20 14:45 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,39 +14,39 @@ msgstr ""
 msgid "GitHUB account"
 msgstr ""
 
-#: frmGitHubAccount.form:38
+#: frmGitHubAccount.form:39
 msgid "New Profile"
 msgstr ""
 
-#: frmGitHubAccount.form:43
+#: frmGitHubAccount.form:44
 msgid "Username:"
 msgstr ""
 
-#: frmGitHubAccount.form:49
+#: frmGitHubAccount.form:50
 msgid "Password:"
 msgstr ""
 
-#: frmGitHubAccount.form:55
+#: frmGitHubAccount.form:56
 msgid "email:"
 msgstr ""
 
-#: frmGitHubAccount.form:61
+#: frmGitHubAccount.form:62
 msgid "Save"
 msgstr ""
 
-#: frmGitHubAccount.form:66
+#: frmGitHubAccount.form:67
 msgid "Cancel"
 msgstr ""
 
-#: frmGitHubAccount.class:22
+#: frmGitHubAccount.class:21
 msgid "Profile Name"
 msgstr ""
 
-#: frmGitHubAccount.class:22
+#: frmGitHubAccount.class:21
 msgid "Enter new profile name"
 msgstr ""
 
-#: frmGitHubAccount.class:70
+#: frmGitHubAccount.class:65
 msgid "Profile saved."
 msgstr ""
 
