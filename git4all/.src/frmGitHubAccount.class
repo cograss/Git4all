@@ -16,14 +16,19 @@ End
 
 
 Public Sub btnNew_Click() 'click the New Account button.
-Dim myProfile As String
+Dim myProfile, mySearch As String
+Dim i As Integer
 
 myProfile = InputBox(("Profile Name"), ("Enter new profile name")) 'gets profile name from user
-  If Trim(myProfile) = main.glbProfile Or Trim(myProfile) = "" Then Return 'exits the function.
+myProfile = Trim(myProfile)
 
-  ''
-  ''   TODO: make a search function to prevent double entries in ProfilesFile.
-  ''
+ i = cmbProfile.Count ''this while loop is a small search engine. Seaches all combo entries
+ While i > 0
+    mySearch = cmbProfile.Text
+    If Comp(mySearch, myProfile) = 0 Or myProfile = "" Then Return 'this prevents double or null entries. 
+    i -= i 'decrements i
+ Wend
+
   cmbProfile.Add(myProfile, cmbProfile.Index + 1) 'adds profilename to ComboBox.
   cmbProfile.Index += 1 'changes to new added item.
 
@@ -54,8 +59,9 @@ myText = cmbProfile.Current.Text ' a trick to use ComboBox.Text,
 myTextBox.Text = myText          ' as TextBox.Text (copy contents to a virtual TextBox).
 
 '''''''' Save profile name from Combobox.Text to profiles file.
-mypath = main.glbProfilesFile
+myPath = main.glbProfilesFile
 myFunctions.textBoxSaver(myTextBox, mypath) 'call TextBoxSaver() to save ProfileName from cmbProfile to ProfilesFile.
+
 ''''''' Save data to new profile
 ''
 ''  TODO: Save profile data To main.glbAppDir/main.glbProfile File.
