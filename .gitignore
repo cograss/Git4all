@@ -18,7 +18,7 @@ vgcore.*
 .*.prof
 
 # Translation files
-.lang/*.pot
-.gambas/*
+#.lang/*.pot
+#.gambas/*
 
 #----
