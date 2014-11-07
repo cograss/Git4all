@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2014-11-07 09:18 UTC\n"
+"POT-Creation-Date: 2014-11-07 11:31 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,5 +56,13 @@ msgstr ""
 
 #: FMain.class:47
 msgid "Do you wish to reinitialise it?"
+msgstr ""
+
+#: FMain.class:47
+msgid "OK"
+msgstr ""
+
+#: FMain.class:47
+msgid "Cancel"
 msgstr ""
 

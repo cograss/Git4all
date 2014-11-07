@@ -44,7 +44,7 @@ Dim test As String
  If Dialog.SelectDirectory() Then Return
  main.glbProjectDir = Dialog.Path
  If Exist(main.glbProjectDir &/ ".git") Then
-  If Message.Question(("The folder you specified is already a GIT project.") & "/n" & ("Do you wish to reinitialise it?")) = 1 Then Return
+  If Message.Warning(("The folder you specified is already a GIT project.") & "\n" & ("Do you wish to reinitialise it?"), ("OK"), ("Cancel")) = 2 Then Return
  Endif
 Exec ["git", "-C", main.glbProjectDir, "init"] To test
 Message(test)
