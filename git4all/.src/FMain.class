@@ -38,3 +38,14 @@ Public Sub mnuSettingsGithubAccount_Click()
   frmGitHubAccount.Show()
 
 End
+
+Public Sub mnuProjectNew_Click()
+Dim test As String
+ If Dialog.SelectDirectory() Then Return
+ main.glbProjectDir = Dialog.Path
+ If Exist(main.glbProjectDir &/ ".git") Then
+  If Message.Question(("The folder you specified is already a GIT project.") & "/n" & ("Do you wish to reinitialise it?")) = 1 Then Return
+ Endif
+Exec ["git", "-C", main.glbProjectDir, "init"] To test
+Message(test)
+End

@@ -20,6 +20,7 @@
 
  Public glbGithubUrl As String  '' Github Webpage.
  Public glbAppDir As String '' Main Directory of this application.
+ Public glbProjectDir As String '' current project directory.
  Public glbConfigPath As String '' Configuration file full path.
  Public glbProfile As String '' Current user profile used by app.
  Public glbProfilesFile As String '' The file that contains all profiles data

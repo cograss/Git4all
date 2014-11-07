@@ -47,7 +47,7 @@ Public Sub btnCancel_Click()
 End
 
 Public Sub btnSave_Click() ' activated when Save button is pressed
-Dim myText, myPath As String
+Dim myText, myPath, mySearch As String
 Dim myTextBox As New TextBox(Me) 'used to get text from other controls.
 
 myText = cmbProfile.Current.Text ' a trick to use ComboBox.Text, 
@@ -55,13 +55,16 @@ myTextBox.Text = myText          ' as TextBox.Text (copy contents to a virtual T
 
 '''''''' Save profile name from Combobox.Text to profiles file.
 myPath = main.glbProfilesFile
-myFunctions.textBoxSaver(myTextBox, mypath) 'call TextBoxSaver() to save ProfileName from cmbProfile to ProfilesFile.
+'' TODO: profiles file saves double entries bug
+ myFunctions.textBoxSaver(myTextBox, myPath) 'call TextBoxSaver() to save ProfileName from cmbProfile to ProfilesFile.
 
 ''''''' Save data to new profile
-''
-''  TODO: Save profile data To main.glbAppDir/main.glbProfile File.
-''
-''
+myPath = main.glbAppDir &/ myText
+myFunctions.fileCreator(myPath, False) 'create file or empty contents
+myFunctions.textBoxSaver(txtBoxUser, myPath) 'save content of textbox in file
+myFunctions.textBoxSaver(txtBoxPwd, myPath)
+myFunctions.textBoxSaver(txtBoxEmail, myPath)
+'''''''
 Message.Info(("Profile saved."))
-Me.Close
+
 End

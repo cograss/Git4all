@@ -90,22 +90,26 @@ hFile = Open fromFile For Input 'opens file
       lineNum -= 1 'lineNum = lineNum - 1
       If sLine Not Null Then loadToTextBox.Text = sLine
     Wend
-    Line Input #hFile, sLine 
+    Line Input #hFile, sLine
   Wend
 Close #hFile
 
 End
 
-Static Public Sub textBoxSaver(TextBoxName As TextBox, filePath As String) '' saves Textbox.Text to a file
-
+Static Public Sub textBoxSaver(saveFromTextBox As TextBox, filePath As String) '' saves Textbox.Text to a file
+'' ###FUNCTION INFO
+'' This function needs two (2) arguments: 
+'' *'saveToTextBox' name of the TextBox, 
+'' *'fromFile' the filepath of the file to be read from.
+'' 
 Dim hFile As File
 Dim sLine As String
 
 filePath = Replace(filePath, " ", "_") 'replace space with underscore. (to avoid shell errors easy)
-sLine = TextBoxName.Text & Chr(13) 
+sLine = saveFromTextBox.Text 
   If sLine Not Null Then 
     hFile = Open filepath For Append 'opens file setting pointer at Eof (for additional data)
-    Print #hFile, sLine 'add data
+    Print #hFile, sLine & Chr(13) 'add data
     Close #hFile
   Endif
 End
