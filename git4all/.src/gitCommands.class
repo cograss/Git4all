@@ -1,0 +1,10 @@
+' Gambas class file
+
+
+Static Public Sub initGitDir(directory As String) As String '' This fuction initialises a Git Directory. returns result string 
+Dim strOutput As String
+
+ Exec ["git", "-C", directory, "init"] To strOutput
+
+Return strOutput
+End
