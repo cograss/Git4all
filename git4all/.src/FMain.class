@@ -40,12 +40,12 @@ Public Sub mnuSettingsGithubAccount_Click()
 End
 
 Public Sub mnuProjectNew_Click()
-Dim test As String
+Dim strOutput As String
  If Dialog.SelectDirectory() Then Return
- main.glbProjectDir = Dialog.Path
- If Exist(main.glbProjectDir &/ ".git") Then
+ main.glbProjectDir = Dialog.Path 'sets project direcrory to chosen path.
+ If Exist(main.glbProjectDir &/ ".git") Then 'if the dir is already a git project, ask confirmation.
   If Message.Warning(("The folder you specified is already a GIT project.") & "\n" & ("Do you wish to reinitialise it?"), ("OK"), ("Cancel")) = 2 Then Return
  Endif
-Exec ["git", "-C", main.glbProjectDir, "init"] To test
-Message(test)
+strOutput = gitCommands.initGitDir(main.glbProjectDir) 'execute initialisation git command and assingn output to string.
+txtGitOutput.Text = txtGitOutput.Text & Chr(13) & strOutput 'show output of command to output textarea.
 End
