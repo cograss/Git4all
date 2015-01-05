@@ -1,7 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,114,75)
+  MoveScaled(0,0,114,74)
   { mnuProject Menu
     Text = ("Project")
     { mnuProjectNew Menu
@@ -40,7 +40,7 @@
     Text = ("Help")
   }
   { txtGitOutput TextArea
-    MoveScaled(2,58,110,11)
+    MoveScaled(2.1429,57.1429,110,11.4286)
     Background = &H000000&
     Foreground = &HDFDF00&
   }
