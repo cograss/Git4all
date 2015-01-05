@@ -9,6 +9,7 @@ Public Sub Form_Open()
   Me.Height = 600
   Me.width = 800
   Me.Center
+  txtGitOutput.Text = "Ready_" & Chr(13)
 End
 
 Public Sub Form_Close()
@@ -41,6 +42,7 @@ End
 
 Public Sub mnuProjectNew_Click()
 Dim strOutput As String ' used to store output from shell execution.
+Dialog.Title = ("Select a new project directory.")
  If Dialog.SelectDirectory() Then Return
  main.glbProjectDir = Dialog.Path 'sets project direcrory to chosen path.
  If Exist(main.glbProjectDir &/ ".git") Then 'if the dir is already a git project, ask confirmation.
@@ -53,13 +55,24 @@ txtGitOutput.Text = txtGitOutput.Text & Chr(13) & strOutput 'show output of comm
 End
 
 Public Sub mnuProjectOpen_Click()
-
-  
+Dialog.Title = ("Select a GIT project directory.")
+If Dialog.SelectDirectory() Then Return
+If Not Exist(Dialog.Path &/ ".git") Then
+ If Message.Error(("The folder you specified is NOT a GIT project.") & "\n" & ("Do you wish to initialise a new project?"), ("OK"), ("Cancel")) = 1 Then
+  mnuProjectNew_Click
+  Wait 'Wait For previous call To end.
+  Return
+  End If
+ Message(("Operation Canceled. Active project is ") & main.glbProjectDir)
+ Return
+End If
+main.glbProjectDir = Dialog.Path 'sets project direcrory to chosen path.
+Message(("Active project is now set to:\n") & main.glbProjectDir)
 
 End
 
 Public Sub Form_Resize()
-
+  ''Set the textview new size.
   txtGitOutput.w = FMain.w - 25
   txtGitOutput.Y = FMain.H - 115
 
