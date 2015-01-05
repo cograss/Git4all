@@ -1,7 +1,7 @@
 #Git4all
 ##A complete GIT GUI for Linux using [*GAMBAS*](http://gambas.sourceforge.net/) lang.
 
-   ###THIS PROJECT IS A GREAT WAY OF LEARNING VISUAL BASIC FOR LINUX
+   ##THIS PROJECT IS A GREAT WAY OF LEARNING VISUAL BASIC FOR LINUX
 
 * Why Gambas?  
   The idea is to bring more Microsoft Windows programmers into Linux 
