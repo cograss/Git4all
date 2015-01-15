@@ -1,14 +1,15 @@
 # Gambas Project File 3.0
-# Compiled with Gambas 3.5.3
-Title=A GIT GUI focused on simplicity
+# Compiled with Gambas 3.6.2
+Title=git4all - A GIT GUI focused on simplicity
 Startup=main
-Version=0.0.2
+Version=0.0.3
 Component=gb.image
 Component=gb.qt4
 Component=gb.form
 Component=gb.qt4.webkit
 Component=gb.xml
 Component=gb.xml.html
+Description="A GIT GUI focused on simplicity. It also supports GitHub accounts."
 TabSize=2
 Translate=1
 Language=el

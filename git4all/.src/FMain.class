@@ -9,7 +9,7 @@ Public Sub Form_Open()
   Me.Height = 600
   Me.width = 800
   Me.Center
-  txtGitOutput.Text = "Ready_" & Chr(13)
+  txtGitOutput.Text = "Ready_" & Chr(13) 'Shows "Ready" in the output text area.
 End
 
 Public Sub Form_Close()
@@ -46,7 +46,7 @@ Dialog.Title = ("Select a new project directory.")
  If Dialog.SelectDirectory() Then Return
  main.glbProjectDir = Dialog.Path 'sets project direcrory to chosen path.
  If Exist(main.glbProjectDir &/ ".git") Then 'if the dir is already a git project, ask confirmation.
-  If Message.Warning(("The folder you specified is already a GIT project.") & "\n" & ("Do you wish to reinitialise it?"), ("OK"), ("Cancel")) = 2 Then Return
+  If Message.Error(("The folder you specified is already a GIT project.") & "\n" & ("Do you wish to reinitialise it?"), ("OK"), ("Cancel")) = 2 Then Return
  Endif
 
 strOutput = gitCommands.initGitDir(main.glbProjectDir) 'execute initialisation git command and assingn output to string.
