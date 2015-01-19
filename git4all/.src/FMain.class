@@ -104,5 +104,5 @@ Public Sub pushBtn_Click() ''TODO: Create a file for login data.
   main.glbRepozitory = InputBox("Enter Repozitory", "Login info")
   main.glbBranch = InputBox("Enter Branch", "Login info")
   Wait
-  txtGitOutput = gitCommands.GitHubPush(main.glbRepozitory, main.glbBranch)
+  txtGitOutput.Text = gitCommands.GitHubPush(main.glbRepozitory, main.glbBranch)
 End
