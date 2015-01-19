@@ -13,11 +13,11 @@
 ''    e.g.: 
 ''          Dim myPath As String
 ''          myPath = main.glbAppDir
-''  Initial Values:
+''  Initial Values (if any):
 ''     Should be Assigned in this file under "Public Sub main()" below as they would be called from other functions.
 ''       e.g.:  main.glbAppDir = Trim(User.Home &/ ".git4all/")
-''
 
+'' START of global variables declaration.
  Public glbGithubUrl As String  '' Github Webpage.
  Public glbAppDir As String '' Main Directory of this application.
  Public glbProjectDir As String '' current project directory.
@@ -27,6 +27,7 @@
  Public glbUsername As String 'Used for login to github
  Public glbPassword As String 'Used for login to github
  Public glbRepozitory As String 'Used for GitHub Push, Pull or fetch 
+ Public glbBranch As String 'Used for GitHub Push, Pull or fetch 
 '' END of global variables declaration.
 
 Public Sub main()  '' Global declarations, initial values and Show Main Form

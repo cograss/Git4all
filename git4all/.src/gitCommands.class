@@ -25,7 +25,7 @@ Wait
 Return strOutput
 End
 
-Static Public Sub GitHubPush(branch As String) As String
+Static Public Sub GitHubPush(repo As String, branch As String) As String
 Dim strOutput As String
  ' the following line executes push with https://username:password@github.com/user/repozitory
  Exec ["git", "-C", "push", "https//" & main.glbUsername & ":" & main.glbPassword & "@github.com/" & main.glbUsername & "/" & main.glbRepozitory & ".git ", branch] To strOutput 'git push"
