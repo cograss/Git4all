@@ -14,14 +14,21 @@ Dim strOutput As String
 
  Exec ["git", "-C", directory, "status"] To strOutput 'git status
  
-
 Return strOutput
 End
 
 Static Public Sub GitCommitAll(directory As String, myMessage As String) As String
 Dim strOutput As String
 
- Exec ["git", "-C", directory, "commit", "-am", "'" & myMessage & "'"] To strOutput 'git commit -a
+ Exec ["git", "-C", directory, "commit", "-am", "'" & myMessage & "'"] To strOutput 'git commit -am (all with message)
+Wait
+Return strOutput
+End
 
+Static Public Sub GitHubPush(branch As String) As String
+Dim strOutput As String
+ ' the following line executes push with https://username:password@github.com/user/repozitory
+ Exec ["git", "-C", "push", "https//" & main.glbUsername & ":" & main.glbPassword & "@github.com/" & main.glbUsername & "/" & main.glbRepozitory & ".git ", branch] To strOutput 'git push"
+ Wait
 Return strOutput
 End

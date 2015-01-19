@@ -44,22 +44,31 @@
     Background = &H000000&
     Foreground = &HDFDF00&
   }
-  { Frame1 Frame
-    MoveScaled(23,1,89,57)
-    Text = ("Staging Area")
+  { TabStrip1 TabStrip
+    MoveScaled(2,0,110,57)
+    Count = 2
+    Index = 0
+    Text = ("Staging area")
+    { updateStageBtn Button
+      MoveScaled(2,49,13,3)
+      Text = ("Update")
+    }
+    { commit_allBtn Button
+      MoveScaled(19,49,13,3)
+      Text = ("Commit all")
+    }
     { stagingArea TextArea
-      MoveScaled(4,3,83,49)
+      MoveScaled(0,0,83,49)
       Background = &H000000&
       Foreground = &HBF0000&
       ReadOnly = True
     }
-    { updateStageBtn Button
-      MoveScaled(6,52,13,3)
-      Text = ("Update")
+    { pushBtn Button
+      MoveScaled(36,49,11,3)
+      Text = ("Push")
     }
-    { commit_allBtn Button
-      MoveScaled(23,52,13,3)
-      Text = ("Commit all")
-    }
+    Index = 1
+    Text = ("")
+    Index = 0
   }
 }

@@ -68,7 +68,7 @@ If Not Exist(Dialog.Path &/ ".git") Then
 End If
 main.glbProjectDir = Dialog.Path 'sets project direcrory to chosen path.
 Message(("Active project is now set to:\n") & main.glbProjectDir)
-
+updateStageBtn_Click() ' updates staging area
 End
 
 
@@ -94,5 +94,13 @@ If Len(myMessage) > 50 Or Len(myMessage) < 5 Then
 Endif
 strOutput = gitCommands.GitCommitAll(main.glbProjectDir, myMessage)
 txtGitOutput.Text = strOutput
+updateStageBtn_Click() ' updates staging area
+End
 
+Public Sub pushBtn_Click()
+
+  main.glbUsername = InputBox("Enter Username", "Login info")
+  main.glbPassword = InputBox("Enter Password", "Login info")
+  Wait
+  txtGitOutput = gitCommands.GitHubPush()
 End

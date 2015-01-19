@@ -24,7 +24,9 @@
  Public glbConfigPath As String '' Configuration file full path.
  Public glbProfile As String '' Current user profile used by app.
  Public glbProfilesFile As String '' The file that contains all profiles data
-
+ Public glbUsername As String 'Used for login to github
+ Public glbPassword As String 'Used for login to github
+ Public glbRepozitory As String 'Used for GitHub Push, Pull or fetch 
 '' END of global variables declaration.
 
 Public Sub main()  '' Global declarations, initial values and Show Main Form
