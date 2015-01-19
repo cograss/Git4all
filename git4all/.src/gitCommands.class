@@ -4,7 +4,24 @@
 Static Public Sub initGitDir(directory As String) As String '' This fuction initialises a Git Directory. returns result string 
 Dim strOutput As String
 
- Exec ["git", "-C", directory, "init"] To strOutput
+ Exec ["git", "-C", directory, "init"] To strOutput 'git init
+
+Return strOutput
+End
+
+Static Public Sub GitStatus(directory As String) As String
+Dim strOutput As String
+
+ Exec ["git", "-C", directory, "status"] To strOutput 'git status
+ 
+
+Return strOutput
+End
+
+Static Public Sub GitCommitAll(directory As String, myMessage As String) As String
+Dim strOutput As String
+
+ Exec ["git", "-C", directory, "commit", "-am", "'" & myMessage & "'"] To strOutput 'git commit -a
 
 Return strOutput
 End

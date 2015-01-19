@@ -71,9 +71,28 @@ Message(("Active project is now set to:\n") & main.glbProjectDir)
 
 End
 
+
+Public Sub updateStageBtn_Click()
+Dim strOutput As String ' used to store output from shell execution.
+  
+strOutput = gitCommands.GitStatus(main.glbProjectDir)
+stagingArea.Text = strOutput
+End
 Public Sub Form_Resize()
   ''Set the textview new size.
   txtGitOutput.w = FMain.w - 25
   txtGitOutput.Y = FMain.H - 115
+
+End
+
+Public Sub commit_allBtn_Click()
+Dim strOutput, myMessage As String 
+myMessage = InputBox(("Changes description"), ("Commit Message"))
+If Len(myMessage) > 50 Or Len(myMessage) < 5 Then
+  Message.Error(("Description must be at least 5 charactres") & "\n" & ("and up to 50 characters")) 
+  Return
+Endif
+strOutput = gitCommands.GitCommitAll(main.glbProjectDir, myMessage)
+txtGitOutput.Text = strOutput
 
 End

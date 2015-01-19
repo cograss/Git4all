@@ -44,4 +44,22 @@
     Background = &H000000&
     Foreground = &HDFDF00&
   }
+  { Frame1 Frame
+    MoveScaled(23,1,89,57)
+    Text = ("Staging Area")
+    { stagingArea TextArea
+      MoveScaled(4,3,83,49)
+      Background = &H000000&
+      Foreground = &HBF0000&
+      ReadOnly = True
+    }
+    { updateStageBtn Button
+      MoveScaled(6,52,13,3)
+      Text = ("Update")
+    }
+    { commit_allBtn Button
+      MoveScaled(23,52,13,3)
+      Text = ("Commit all")
+    }
+  }
 }
