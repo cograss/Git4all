@@ -67,7 +67,8 @@ fromFile = Replace(fromFile, " ", "_") 'replace space with underscore. (to avoid
 hFile = Open fromFile For Input
   While Not Eof(hFile)
     Line Input #hFile, sLine 
-    loadToCombo.Add(sLine, sNum + 1) 
+    sNum += 1
+    loadToCombo.Add(sLine, sNum) 
   Wend
 Close #hFile
 

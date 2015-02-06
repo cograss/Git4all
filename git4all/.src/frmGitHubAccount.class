@@ -68,3 +68,9 @@ myFunctions.textBoxSaver(txtBoxEmail, myPath)
 Message.Info(("Profile saved."))
 
 End
+
+Public Sub cmbProfile_Change()
+
+  loadUserData()
+
+End

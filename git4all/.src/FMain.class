@@ -98,11 +98,13 @@ updateStageBtn_Click() ' updates staging area
 End
 
 Public Sub pushBtn_Click() ''TODO: Create a file for login data.
-
+Dim strOutput As String
   main.glbUsername = InputBox("Enter Username", "Login info")
   main.glbPassword = InputBox("Enter Password", "Login info")
   main.glbRepozitory = InputBox("Enter Repozitory", "Login info")
   main.glbBranch = InputBox("Enter Branch", "Login info")
   Wait
-  txtGitOutput.Text = gitCommands.GitHubPush(main.glbRepozitory, main.glbBranch)
+  strOutput = gitCommands.GitHubPush(main.glbRepozitory, main.glbBranch)
+  Wait
+  txtGitOutput.Text &= strOutput
 End

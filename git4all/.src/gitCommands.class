@@ -25,10 +25,11 @@ Wait
 Return strOutput
 End
 
-Static Public Sub GitHubPush(repo As String, branch As String) As String
+Static Public Sub GitHubPush(repo As String, branch As String) As String 'ΔΕΝ ΔΟΥΛΕΥΕΙ!
 Dim strOutput As String
  ' the following line executes push with https://username:password@github.com/user/repozitory
- Exec ["git", "-C", "push", "https://" & main.glbUsername & ":" & main.glbPassword & "@github.com/" & main.glbUsername & "/" & main.glbRepozitory, branch] To strOutput 'git push"
+Exec ["git", "-C", "push", "https://" & main.glbUsername & ":" & main.glbPassword & "@github.com/" & main.glbUsername & "/" & repo, branch] To strOutput 'git push"
+
  Wait
 Return strOutput
 End
