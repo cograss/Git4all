@@ -31,11 +31,12 @@ Public Sub main()  '' Global declarations, initial values and Show Main Form
 
 ''''''''''''' Global Variables Initials (only if needed)'''''''''''''''''''''
 
-  main.glbGithubUrl = "http://www.github.com/" ' GitHUB main webpage
+  main.glbGithubUrl = "https://github.com/join?source=header-home" ' GitHUB main webpage
   main.glbAppDir = Trim(User.Home &/ ".git4all/") ' Path of application data main directory
   main.glbConfigPath = main.glbAppDir &/ "git4all.cfg" ' Path of config file
   main.glbProfilesFile = main.glbAppDir &/ "profiles" ' The file that contains all profiles
-
+  main.glbProjectDir = "unspecified" ' the current active directory
+  
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   
   If Not Exist(main.glbAppDir) Then Mkdir main.glbAppDir

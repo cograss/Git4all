@@ -9,16 +9,17 @@ Count=0
 Count=0
 
 [OpenFile]
-File[1]=".src/FMain.class:6.3"
-Fold[1]=[6,14,21,27,36,42,56,73]
+File[1]=".src/FMain.class:3.54"
+Fold[1]=[14,21,36]
 File[2]=".src/FMain.form"
 File[3]=".src/gitCommands.class:7.0"
-File[4]=".src/myFunctions.class:0.0"
-Fold[4]=[0,5,19,34,54,75,98]
+File[4]=".src/myFunctions.class:0.54"
+Fold[4]=[0,5,19,34,75,98]
 File[5]=".src/frmGitHubAccount.form"
-Active=6
-File[6]=".src/frmGitHubAccount.class:4.2"
-Count=6
+Active=2
+File[6]=".src/frmGitHubAccount.class:0.49"
+Count=7
+File[7]=".src/main.module:2.38"
 
 [Watches]
 Count=0
